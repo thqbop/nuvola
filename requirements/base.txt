@@ -36,4 +36,7 @@ scipy
 geopy
 google-api-python-client
 psycopg2
+django-htmlmin==0.10.0
+django_compressor==2.0
+django-libsass==0.7
 
