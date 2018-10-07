@@ -53,8 +53,6 @@ TEMPLATES = [
 SECRET_KEY = env('SECRET_KEY',
                  default="8gsuG@6@_BC`_LoOTq=x@xJEpF!IM;=C.2R>P*d+L1v+R#@0EDB3YHN?s/A$NT[dKNealcVdnJano#~`3SQO&RM;(m3T'y0~)Z3|")
 CSRF_COOKIE_SECURE = True
-API_HOST = env('API_HOST')
-API_PORT = env('API_PORT')
 MEDIA_URL = "/media/"
 PUBLIC_BASE = env('PUBLIC_BASE')
 
@@ -77,8 +75,10 @@ LOCAL_APPS = (
 
 THIRD_PARTY_APPS = (
     'rest_framework',
-    'template_email'
-    # 'django_beanstalkd',
+    'template_email',
+    'authtools',
+    'compressor',
+    'crispy_forms'
 )
 INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
@@ -104,11 +104,11 @@ WSGI_APPLICATION = 'nuvola.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':  env('DB_SQL_NAME'),
-        'USER': env('DB_SQL_USER'),
-        'PASSWORD': env('DB_SQL_PASS', default=''),
-        'HOST': env('DB_SQL_HOST'),   # Or an IP Address that your DB is hosted on
-        'PORT': env('DB_SQL_PORT'),
+        'NAME':  env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASS', default=''),
+        'HOST': env('DB_HOST'),   # Or an IP Address that your DB is hosted on
+        'PORT': env('DB_PORT'),
     }
 }
 
@@ -205,3 +205,5 @@ SUPPORT_EMAIL = env('SUPPORT_EMAIL', default='support@smartoffice.com')
 BCC_EMAIL_ADDRESS = env('BCC_EMAIL_ADDRESS', default='support@smartoffice.com')
 ALLOWED_EMAILS = env('ALLOWED_EMAILS', default='*')
 SUPPORT_PHONE = env('SUPPORT_PHONE', default='xxx-xxx-xxxx')
+
+STATIC_URL = '/static/'

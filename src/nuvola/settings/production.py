@@ -9,10 +9,7 @@ TEMPLATE_DEBUG = False
 
 # Must mention ALLOWED_HOSTS in production!
 
-API_BASE = "{0}:{1}".format(API_HOST, API_PORT)
-if API_PORT == "80":
-    API_BASE = "{0}".format(API_HOST)
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=[API_BASE, '127.0.0.1',
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1',
                                                           '.smartoffice.vn', 'localhost', 'localhost:8001'])
 
 

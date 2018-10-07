@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.not_authorized, name='403'),
-    url(r'^admin', include('admin_site.router', namespace='v1', app_name=settings.ADMIN_SITE)),
+    url(r'^admin', include('admin_site.urls', namespace='v1', app_name=settings.ADMIN_SITE)),
 ]
 
 # User-uploaded files like profile pics need to be served in development

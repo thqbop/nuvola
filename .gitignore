@@ -109,3 +109,7 @@ venv.bak/
 /.settings/
 /.idea
 /src/static/cache/*
+#Config file
+config.env
+*.sh
+pyvenv.cfg
