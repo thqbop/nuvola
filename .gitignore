@@ -109,3 +109,4 @@ venv.bak/
 /.settings/
 /.idea
 /src/static/cache/*
+#abc abc
