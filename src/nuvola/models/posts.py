@@ -7,6 +7,7 @@ class Posts(TimeStampedModel):
 
     title = models.CharField(max_length=255)
     content = models.TextField(default='')
+    author = models.CharField(max_length=100)
 
     class Meta:
         db_table = 'posts'
