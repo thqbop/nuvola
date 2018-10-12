@@ -71,6 +71,7 @@ DJANGO_APPS = (
 
 LOCAL_APPS = (
     'admin_site',
+    'nuvola'
 )
 
 THIRD_PARTY_APPS = (
@@ -207,3 +208,19 @@ ALLOWED_EMAILS = env('ALLOWED_EMAILS', default='*')
 SUPPORT_PHONE = env('SUPPORT_PHONE', default='xxx-xxx-xxxx')
 
 STATIC_URL = '/static/'
+
+# Django compressor config
+COMPRESS_ROOT = join(BASE_DIR, 'static')
+COMPRESS_OUTPUT_DIR = 'cache'
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
+COMPRESS_CSS_FILTERS = (
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter',
+)
