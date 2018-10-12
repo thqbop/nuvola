@@ -113,3 +113,4 @@ venv.bak/
 config.env
 *.sh
 pyvenv.cfg
+**/migrations/*
