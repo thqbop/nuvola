@@ -1,0 +1,1 @@
+from nuvola.models.posts import Posts
